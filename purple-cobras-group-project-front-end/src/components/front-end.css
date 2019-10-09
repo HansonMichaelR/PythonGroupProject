@@ -1,9 +1,56 @@
 .header {
+    font-size: 24px;
     margin: 25px;
 }
 
+.front-end-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .des-moines-image {
-    height:350px;
-    width:700px;
+    height:300px;
+    width:600px;
     border-radius: 8px;
+}
+
+.image-source {
+    font-size: 8px;
+    margin-bottom: 15px;
+}
+
+.inputs-container {
+    justify-self: center;
+    width: 800px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.input-directions {
+    margin-top: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin: 10px 10px;
+}
+
+.submit {
+    align-self: center;
+    max-width: 300px
+}
+
+.right-column {
+
+}
+
+.left-column {
+
 }
