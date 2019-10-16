@@ -14,6 +14,7 @@
     height:300px;
     width:600px;
     border-radius: 8px;
+    border:2px solid black;
 }
 
 .image-source {
@@ -36,6 +37,11 @@
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.data-input {
+    display: flex;
+    flex-direction: row;
 }
 
 .input {

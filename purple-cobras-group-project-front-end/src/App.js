@@ -6,10 +6,12 @@ import {FrontEnd} from './components/front-end.js'
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        Calculate a Comparable House Price in Des Moines
-      </header>
-      <FrontEnd/>
+      <div className="app-container">
+        <header className="header">
+          Calculate a Comparable House Price in Des Moines
+        </header>
+        <FrontEnd/>
+      </div>
     </div>
   );
 }

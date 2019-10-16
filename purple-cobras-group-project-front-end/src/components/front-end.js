@@ -1,6 +1,7 @@
 import React from 'react';
 import DesMoines from './desmoines.jpg';
 import { Formik, Form, Field } from 'formik';
+import axios from 'axios';
 
 export const FrontEnd = () => {
     return (
@@ -11,26 +12,30 @@ export const FrontEnd = () => {
             <div className='inputs-container'>
                 <div className='input-directions'>Enter Desired House Information:</div>
                 <Formik
-                      initialValues={{ finishedSquareFeet: '', numberOfGarageStalls: '' }}
+                      initialValues={{ finishedSquareFeet: '', numberOfGarageStalls: ''}}
                       onSubmit={(values, { setSubmitting }) => {
-                        setTimeout(() => {
-                          alert(JSON.stringify(values, null, 2));
+                        setTimeout(async () => {
+                          //alert(JSON.stringify(values, null, 2));
+                          let response = await axios.post('http://127.0.0.1:5000/regression', {form:{Input1:.5,Input2:.85,Input3:23.1,Input4:55.2,Input5:66.3}});
+                          console.log(response)
                           setSubmitting(false);
                         }, 200);
                       }}
                     >
                       {({ isSubmitting }) => (
                         <Form className='form'>
-                          <div className='left-column'>
-                            <div>
-                              <div>Finished Square Feet</div>
-                              <Field type="text" name="finishedSquareFeet" className='input'/>
+                          <div className='data-input'>
+                            <div className='left-column'>
+                              <div>
+                                <div>Finished Square Feet</div>
+                                <Field type="text" name="finishedSquareFeet" className='input'/>
+                              </div>
                             </div>
-                          </div>
-                          <div className='right-column'>
-                            <div>
-                              <div>Number Of Garage Stalls</div>
-                              <Field type="text" name="numberOfGarageStalls" className='input'/>
+                            <div className='right-column'>
+                              <div>
+                                <div>Number Of Garage Stalls</div>
+                                <Field type="text" name="numberOfGarageStalls" className='input'/>
+                              </div>
                             </div>
                           </div>
                           <button type="submit" disabled={isSubmitting} className='submit'>
