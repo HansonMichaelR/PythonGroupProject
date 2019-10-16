@@ -15,9 +15,8 @@ export const FrontEnd = () => {
                       initialValues={{ finishedSquareFeet: '', numberOfGarageStalls: ''}}
                       onSubmit={(values, { setSubmitting }) => {
                         setTimeout(async () => {
-                          //alert(JSON.stringify(values, null, 2));
-                          let response = await axios.post('http://127.0.0.1:5000/regression', {form:{Input1:.5,Input2:.85,Input3:23.1,Input4:55.2,Input5:66.3}});
-                          console.log(response)
+                          let response = await axios.get(`http://127.0.0.1:5000/regression?Input1=${values.finishedSquareFeet}&Input2=.85&Input3=23.1&Input4=55.2&Input5=66.3`);
+                          console.log(response.data.data[0].Prediction)
                           setSubmitting(false);
                         }, 200);
                       }}
