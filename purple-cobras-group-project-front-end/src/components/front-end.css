@@ -42,10 +42,12 @@
 .data-input {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .input {
     margin: 10px 10px;
+    width: 220px;
 }
 
 .submit {
@@ -53,10 +55,7 @@
     max-width: 300px
 }
 
-.right-column {
-
-}
-
-.left-column {
-
+.result-container {
+    display: flex;
+    flex-direction: row;
 }

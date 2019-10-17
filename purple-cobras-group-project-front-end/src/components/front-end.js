@@ -19,7 +19,7 @@ export const FrontEnd = () => {
                           let response = await axios.get(`http://127.0.0.1:5000/regression?Input1=${values.finishedSquareFeet}&Input2=${values.foundationType}&Input3=23.1&Input4=55.2&Input5=66.3`);
                           console.log(response.data.data[0].Prediction)
                           let responsePrediction = response.data.data[0].Prediction
-                          setPrediction(responsePrediction)
+                          setPrediction(Math.round(responsePrediction * 100) / 100)
                           setSubmitting(false);
                         }, 200);
                       }}
@@ -27,25 +27,21 @@ export const FrontEnd = () => {
                       {({ isSubmitting }) => (
                         <Form className='form'>
                           <div className='data-input'>
-                            <div className='left-column'>
-                              <div>
-                                <div>Finished Square Feet</div>
-                                <Field type="text" name="finishedSquareFeet" className='input'/>
-                              </div>
-                              <div>
-                                <div>Foundation Type</div>
-                                <Field component="select" type="text" name="foundationType" className='input'>
-                                  <option value=".85">Concrete</option>
-                                  <option value=".05">Wood</option>
-                                  <option value=".65">Dirt</option>
-                                </Field>
-                              </div>
+                            <div>
+                              <div>Finished Square Feet</div>
+                              <Field type="text" name="finishedSquareFeet" className='input'/>
                             </div>
-                            <div className='right-column'>
-                              <div>
-                                <div>Number Of Garage Stalls</div>
-                                <Field type="text" name="numberOfGarageStalls" className='input'/>
-                              </div>
+                            <div>
+                              <div>Foundation Type</div>
+                              <Field component="select" type="text" name="foundationType" className='input'>
+                                <option value=".85">Concrete</option>
+                                <option value=".05">Wood</option>
+                                <option value=".65">Dirt</option>
+                              </Field>
+                            </div>
+                            <div>
+                              <div>Number Of Garage Stalls</div>
+                              <Field type="text" name="numberOfGarageStalls" className='input'/>
                             </div>
                           </div>
                           <button type="submit" disabled={isSubmitting} className='submit'>
@@ -54,7 +50,10 @@ export const FrontEnd = () => {
                         </Form>
                       )}
                 </Formik>
-                <div>${prediction}</div>
+                <div className='result-container'>
+                  <div>The estimated price for this house is:</div>
+                  <div>${prediction}</div>
+                </div>
             </div>
         </div>
     );
