@@ -11,7 +11,7 @@ export const FrontEnd = () => {
             <div className='image-source'>source: https://www.flickr.com/photos/w4nd3rl0st/5371338419</div>
 
             <div className='inputs-container'>
-                <div className='input-directions'>Enter Desired House Information:</div>
+                <div className='input-directions'>Enter Your Desired House Information:</div>
                 <Formik
                       initialValues={{ finishedSquareFeet: '', numberOfGarageStalls: '', foundationType: '.85'}}
                       onSubmit={(values, { setSubmitting }) => {
@@ -50,10 +50,10 @@ export const FrontEnd = () => {
                         </Form>
                       )}
                 </Formik>
-                <div className='result-container'>
-                  <div>The estimated price for this house is:</div>
-                  <div>${prediction}</div>
-                </div>
+            </div>
+            <div className='result-container'>
+              <div>Estimated Price:</div>
+              <div>${prediction}</div>
             </div>
         </div>
     );
