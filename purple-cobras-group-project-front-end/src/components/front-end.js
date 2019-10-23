@@ -52,8 +52,8 @@ export const FrontEnd = () => {
                 </Formik>
             </div>
             <div className='result-container'>
-              <div>Estimated Price:</div>
-              <div>${prediction}</div>
+              <div className='result-title'>Estimated Price:</div>
+              <div className='result-prediction'>${prediction}</div>
             </div>
         </div>
     );

@@ -65,4 +65,21 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
+    width: 350px;
+}
+
+.result-title {
+    padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 2px;
+    border: solid lightgray;
+    width: 150px;
+}
+
+.result-prediction {
+    padding: 10px;
+    background-color: white;
+    border-radius: 2px;
+    border: solid lightgray;
+    width: 200px;
 }
