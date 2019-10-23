@@ -81,5 +81,6 @@
     background-color: white;
     border-radius: 2px;
     border: solid lightgray;
+    border-left: none;
     width: 200px;
 }
