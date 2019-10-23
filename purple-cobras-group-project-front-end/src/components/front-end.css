@@ -29,7 +29,7 @@
     height: 250px;
     border-radius: 5px;
     border: solid lightgray;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .input-directions {
@@ -64,12 +64,12 @@
 .result-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 350px;
 }
 
 .result-title {
-    padding: 10px;
+    padding: 5px;
     background-color: cornflowerblue;
     border-radius: 2px;
     border: solid lightgray;
@@ -77,7 +77,7 @@
 }
 
 .result-prediction {
-    padding: 10px;
+    padding: 5px;
     background-color: white;
     border-radius: 2px;
     border: solid lightgray;
